@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Endereços</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>Consulta de Endereços</h1>
+
+    <main>
+        <form action="salvar.php" method="POST">
+            <h3>Busca de endereço pelo CEP</h3>
+            <div class="inputbox">
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" required>
+            </div>
+            <div class="inputbox">
+                <label for="rua-avenida">Rua / Avenida:</label>
+                <input type="text" id="rua-avenida" name="rua-avenida" required>
+            </div>
+            <div class="inputbox">
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" required>
+            </div>
+            <div class="inputbox">
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" required>
+            </div>
+            <div class="inputbox">
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado" required>
+            </div>
+            <input type="submit" value="Salvar" id="botao-salvar">
+        </form>
+
+        <section class="lista-de-registros">
+            <div class="container">
+                <h3>Registro de Consultas</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="td-excluir">CEP</th>
+                            <th class="td-excluir">Rua / Avenida</th>
+                            <th><button class="interacoes-tabela td-excluir" onclick="ordenarPor('bairro')">Bairro
+                                    ⬍</button></th>
+                            <th><button class="interacoes-tabela td-excluir" onclick="ordenarPor('cidade')">Cidade
+                                    ⬍</button></th>
+                            <th><button class="interacoes-tabela td-excluir" onclick="ordenarPor('estado')">Estado
+                                    ⬍</button></th>
+                            <th class="td-excluir">Data e Hora</th>
+                            <th class="td-excluir">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Os registros serão carregados aqui pelo JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="./main.js"></script>
+
+</body>
+
+</html>
